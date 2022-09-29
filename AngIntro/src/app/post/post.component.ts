@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
 	selector: "app-post",
@@ -8,10 +8,13 @@ import { Component, OnInit, Input } from "@angular/core";
 export class PostComponent implements OnInit {
 
 	// incoming from parent component
-	@Input() fromParent:string | undefined;
+	@Input() fromParent?:string;
 	
 	// outgoing to parent
-	childMessage:string = "passing data from app-post (child) to app-root (parent)"
+	childMessage:string = "passing data from app-post (child) to app-root (parent)";
+	outputChildMessage: string = "message from the Child Component via Output";
+
+	@Output() messageEvent = new EventEmitter<string>();
 
 	// incoming from child components
 
@@ -24,4 +27,9 @@ export class PostComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	sendMessage(){
+		console.log('clicked');
+		
+	}
 }

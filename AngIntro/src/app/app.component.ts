@@ -13,16 +13,16 @@ export class AppComponent implements AfterViewInit {
 	
 	// incoming from child components
 	@ViewChild(PostComponent) postComp: any;
-	fromPostCompMessage: string = "";
+	fromPostCompMessage?: string;
 	
 	// outgoing to child components
 	parentMessage:string = 'Message coming from parent component';
-
+	
 	constructor(){
 	}
-
+	
 	ngAfterViewInit(): void {
-		this.fromPostCompMessage = this.postComp.childMessage;
+		//this.fromPostCompMessage = this.postComp.childMessage;
 	}
 }
 
