@@ -20,6 +20,10 @@ export class AppComponent implements AfterViewInit {
 	
 	constructor(){
 	}
+
+	receiveMessage($event: any){
+		console.log($event)
+	}
 	
 	ngAfterViewInit(): void {
 		//this.fromPostCompMessage = this.postComp.childMessage;

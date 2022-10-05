@@ -29,7 +29,7 @@ export class PostComponent implements OnInit {
 	ngOnInit(): void {}
 
 	sendMessage(){
-		console.log('clicked');
+		this.messageEvent.emit(this.outputChildMessage);
 		
 	}
 }

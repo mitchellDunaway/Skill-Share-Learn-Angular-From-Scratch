@@ -3,4 +3,4 @@
 <p>{{ fromPostCompMessage }}</p>
 
 <app-navbar></app-navbar>
-<app-post [fromParent]='parentMessage'></app-post>
+<app-post [fromParent]='parentMessage' (messageEvent)="receiveMessage($event)"></app-post>
