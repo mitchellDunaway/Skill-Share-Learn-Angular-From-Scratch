@@ -4,3 +4,4 @@
 
 <app-navbar></app-navbar>
 <app-post [fromParent]='parentMessage' (messageEvent)="receiveMessage($event)"></app-post>
+<p>{{emittedMessageFromPostComponent}}</p>
